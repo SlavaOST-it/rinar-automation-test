@@ -4,3 +4,6 @@
     description: string,
     country: string
 };
+
+
+export type BeerIsCountry = Omit<BeerType, 'country'>
