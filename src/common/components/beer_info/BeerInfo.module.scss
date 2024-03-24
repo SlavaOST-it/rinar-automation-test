@@ -1,0 +1,37 @@
+.beer_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+
+  .title {
+    font-size: 30px;
+  }
+
+  .containerInfo {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+
+    .alcohol {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      font-size: 20px;
+      color: #727272;
+
+      strong {
+        font-size: 26px;
+        color: #050505;
+      }
+    }
+
+    .description {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: justify;
+    }
+  }
+}
