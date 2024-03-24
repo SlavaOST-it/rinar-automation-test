@@ -1,0 +1,17 @@
+.filters_block {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  margin: 20px 0;
+
+  .filter_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+
+    .title_item{
+      font-size: 18px;
+    }
+  }
+}
