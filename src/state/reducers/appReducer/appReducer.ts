@@ -12,8 +12,8 @@ const slice = createSlice({
     initialState: initialState,
 
     selectors:{
-        statusApp: state => state.status,
-        errorApp: state => state.error,
+        selectStatusApp: state => state.status,
+        selectErrorApp: state => state.error,
     },
     reducers: (create)=>({
         setAppStatus: create.reducer((state, action: PayloadAction<{ status: AppStatus }>)=>{
@@ -28,5 +28,5 @@ const slice = createSlice({
 
 export const appReducer = slice.reducer
 export const {setAppStatus, setAppError} = slice.actions
-
+export const {selectStatusApp, selectErrorApp} =slice.selectors
 
