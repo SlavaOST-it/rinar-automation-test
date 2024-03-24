@@ -1,8 +1,5 @@
 export const PATH = {
-    startPage: '/',
-    beers: '/beers',
-    beer_detail_page: '/beer_detail',
-
+    beers: '/',
     settings: '/settings',
     page404: '/404',
 }
