@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.c768bd23.css",
-    "main.js": "/static/js/main.6ee5f32f.js",
-    "static/js/453.6a0aa1db.chunk.js": "/static/js/453.6a0aa1db.chunk.js",
-    "index.html": "/index.html",
-    "main.c768bd23.css.map": "/static/css/main.c768bd23.css.map",
-    "main.6ee5f32f.js.map": "/static/js/main.6ee5f32f.js.map",
-    "453.6a0aa1db.chunk.js.map": "/static/js/453.6a0aa1db.chunk.js.map"
+    "main.css": "/rinar-automation-test/static/css/main.c768bd23.css",
+    "main.js": "/rinar-automation-test/static/js/main.02c1537d.js",
+    "static/js/453.6a0aa1db.chunk.js": "/rinar-automation-test/static/js/453.6a0aa1db.chunk.js",
+    "index.html": "/rinar-automation-test/index.html",
+    "main.c768bd23.css.map": "/rinar-automation-test/static/css/main.c768bd23.css.map",
+    "main.02c1537d.js.map": "/rinar-automation-test/static/js/main.02c1537d.js.map",
+    "453.6a0aa1db.chunk.js.map": "/rinar-automation-test/static/js/453.6a0aa1db.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c768bd23.css",
-    "static/js/main.6ee5f32f.js"
+    "static/js/main.02c1537d.js"
   ]
 }
