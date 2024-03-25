@@ -6,6 +6,7 @@ interface ColumnI extends BeerType {
     key: string;
 }
 
+// название, сортирование колонок таблицы
 export const columns: TableProps<ColumnI>['columns'] = [
     {
         title: 'Наименование',

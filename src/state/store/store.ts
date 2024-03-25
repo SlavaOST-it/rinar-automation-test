@@ -1,11 +1,13 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {ThunkAction, ThunkDispatch} from 'redux-thunk';
-import {AppReducerActionTypes} from "../reducers/appReducer/appReducer-types";
+import {ThunkDispatch} from 'redux-thunk';
+
 import {appReducer} from "../reducers/appReducer/appReducer";
 import {beersReducer} from "../reducers/beersReducer/beersReducer";
+import {beerReducer} from "../reducers/currentBeer/currentBeerReducer";
+
 import {BeersActionTypes} from "../reducers/beersReducer/beersReducer-types";
-import {beerReducer} from "../reducers/cuurentBeer/currentBeerReducer";
-import {CurrentBeerActionTypes} from "../reducers/cuurentBeer/currentBeerReducer-types";
+import {AppReducerActionTypes} from "../reducers/appReducer/appReducer-types";
+import {CurrentBeerActionTypes} from "../reducers/currentBeer/currentBeerReducer-types";
 
 
 const rootReducer = combineReducers({
@@ -26,7 +28,6 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatchType = ThunkDispatch<RootState, unknown, ReduxActionType>
-export type AppThunkType<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, ReduxActionType>;
 
 // @ts-ignore
 window.store = store;

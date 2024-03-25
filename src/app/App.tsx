@@ -1,26 +1,59 @@
-import React from 'react';
-import logo from '../logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {Alert, Spin} from "antd";
+import {useSelector} from "react-redux";
+import {Route, Routes} from 'react-router-dom';
+
+import s from './App.module.scss'
+
+import {MainPage} from '../pages';
+import {PageError} from "../pages/404page/PageError";
+
+import {PATH} from "../utils/routes/routes";
+import {useAppDispatch} from "../utils/hooks/hooks";
+
+import {AppStatus} from "../common/types/commonTypes";
+
+import {fetchAllBeers} from "../state/reducers/beersReducer/beersReducer";
+import {selectErrorApp, selectStatusApp} from '../state/reducers/appReducer/appReducer';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useAppDispatch()
+    const appStatus = useSelector(selectStatusApp)
+    const errorApp = useSelector(selectErrorApp)
+
+    useEffect(() => {
+        dispatch(fetchAllBeers(dispatch))
+    }, [dispatch])
+
+    return (
+        <div className={s.app}>
+
+            <div className={s.pages}>
+                <Routes>
+                    <Route path={PATH.beers} element={<MainPage/>}/>
+                    <Route path={'/*'} element={<PageError/>}/>
+                </Routes>
+            </div>
+
+            <Spin
+                size={'large'}
+                fullscreen={true}
+                spinning={appStatus === AppStatus.LOADING}
+            />
+
+            <div className={s.alert}>
+                {errorApp &&
+                    <Alert
+                        message="Error"
+                        description={errorApp ? errorApp : ''}
+                        type="error"
+                        showIcon
+                        banner={true}
+                    />
+                }
+            </div>
+        </div>)
 }
 
 export default App;

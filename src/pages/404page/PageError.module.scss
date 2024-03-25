@@ -1,0 +1,29 @@
+.page_error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: linear-gradient(to right, rgba(108, 108, 108, 0.89), rgba(126, 115, 22, 0.62));
+  min-height: 100vh;
+
+  .title {
+    font-size: 120px;
+    color: #e0bc0f;
+  }
+
+  .subtitle {
+    font-size: 50px;
+    color: #e0bc0f;
+  }
+
+  .text {
+    font-size: 30px;
+    text-align: center;
+
+    span {
+      font-weight: 900;
+      color: #e0bc0f;
+      cursor: pointer;
+    }
+  }
+}

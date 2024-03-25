@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import s from './FiltersSort.module.scss'
 
 import {
-    fetchBeers,
+    fetchAllBeers,
     fetchBeersIsCountry,
     selectSearchAlcohol, selectSearchCountry,
     setValueAlcohol, setValueCountry, setValueTitle
@@ -17,20 +17,20 @@ import {sortAlcohol, sortCountry} from './dataSorts';
 
 export const FiltersSort = () => {
     const dispatch = useAppDispatch()
-    const searchAlcohol = useSelector(selectSearchAlcohol)
     const searchCountry = useSelector(selectSearchCountry)
+    const searchAlcohol = useSelector(selectSearchAlcohol)
 
     const [isDefaultFilters, setIsDefaultFilters] = useState(true);
 
     const [valueText, setValueText] = useState("")
-    const debouncedValue = useDebounce(valueText)
+    const debouncedValue = useDebounce(valueText)   // Задержка отправки данных (если отправляется как запрос)
 
     const handleChangeValueAlcohol = (value: number) => {
         dispatch(setValueAlcohol({value}))
     };
 
-    const handleChangeValueCountry = (value: string) => {
-        dispatch(fetchBeersIsCountry(value))
+    const handleChangeValueCountry = (valueCountry: string) => {
+        dispatch(fetchBeersIsCountry(valueCountry))
     }
 
     const handlerChangeValueInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -39,9 +39,9 @@ export const FiltersSort = () => {
     }
 
     const handleResetFilters = () => {
-        dispatch(setValueAlcohol({value: 100}))
-        dispatch(setValueCountry({valueCountry: ''}))
-        searchCountry !== sortCountry[0].value && dispatch(fetchBeers())
+        dispatch(setValueAlcohol({value: 100}));
+        dispatch(setValueCountry({valueCountry: ''}));
+        (searchCountry !== sortCountry[0].value) && dispatch(fetchAllBeers(dispatch));
         setValueText("")
     }
 
@@ -49,6 +49,8 @@ export const FiltersSort = () => {
         dispatch(setValueTitle({valueText: debouncedValue}))
     }, [dispatch, debouncedValue]);
 
+
+    // disabled кнопки reset
     useEffect(() => {
         const alcoholDefault = sortAlcohol[0].value;
         const countryDefault = sortCountry[0].value;

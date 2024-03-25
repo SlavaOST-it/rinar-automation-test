@@ -1,9 +1,9 @@
-import axios, {AxiosError} from "axios";
 import {Dispatch} from "redux";
+import axios, {AxiosError} from "axios";
 
 import {AppStatus} from "../../common/types/commonTypes";
-import {SetAppErrorAT, SetAppStatusAT} from "../../state/reducers/appReducer/appReducer-types";
 import {setAppError, setAppStatus} from "../../state/reducers/appReducer/appReducer";
+import {SetAppErrorAT, SetAppStatusAT} from "../../state/reducers/appReducer/appReducer-types";
 
 
 export const baseErrorHandler = (e: Error | AxiosError, dispatch: Dispatch<SetAppErrorAT | SetAppStatusAT>) => {

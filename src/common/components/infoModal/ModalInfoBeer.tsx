@@ -4,7 +4,6 @@ import {Modal} from "antd";
 
 type InfoModalProps = {
     isOpen: boolean,
-
     setIsOpenModal: (isOpen: boolean) => void,
     children: React.ReactNode
 };
@@ -22,7 +21,6 @@ export const ModalInfoBeer: FC<InfoModalProps> = ({isOpen, setIsOpenModal, child
             footer={null}
             width={600}
             onCancel={handleCancel}
-
         >
             {children}
         </Modal>

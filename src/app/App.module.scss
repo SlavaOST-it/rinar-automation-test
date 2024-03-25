@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  flex-direction: column;
+
+  .pages {
+    margin-bottom: 20px;
+  }
+
+  .alert {
+    max-width: 500px;
+  }
+}
