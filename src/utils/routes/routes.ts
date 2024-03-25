@@ -1,4 +1,4 @@
 export const PATH = {
-    beers: '/',
+    beers: '/beers',
     page404: '/404',
 }

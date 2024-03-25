@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Alert, Spin} from "antd";
 import {useSelector} from "react-redux";
-import {Route, Routes} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 
 import s from './App.module.scss'
 
@@ -31,8 +31,10 @@ function App() {
 
             <div className={s.pages}>
                 <Routes>
+                    <Route path={'/'} element={<Navigate to={PATH.beers}/>}/>
                     <Route path={PATH.beers} element={<MainPage/>}/>
-                    <Route path={'/*'} element={<PageError/>}/>
+                    <Route path={PATH.page404} element={<PageError/>}/>
+                    <Route path={"*"} element={<Navigate to={PATH.page404}/>}/>
                 </Routes>
             </div>
 
