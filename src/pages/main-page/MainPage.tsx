@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import {ConfigProvider} from "antd";
 import {useSelector} from "react-redux";
 
 import cs from '../../common/styles/CommonStyles.module.scss'
-import * as colors from '../../common/styles/colors'
 
 import {TableBeers} from "../../common/components/table/TableBeers";
 import {BeerInfo} from "../../common/components/beer_info/BeerInfo";
