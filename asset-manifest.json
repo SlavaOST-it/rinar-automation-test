@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rinar-automation-test/static/css/main.c768bd23.css",
+    "main.js": "/rinar-automation-test/static/js/main.2f8141e9.js",
+    "static/js/453.6a0aa1db.chunk.js": "/rinar-automation-test/static/js/453.6a0aa1db.chunk.js",
+    "index.html": "/rinar-automation-test/index.html",
+    "main.c768bd23.css.map": "/rinar-automation-test/static/css/main.c768bd23.css.map",
+    "main.2f8141e9.js.map": "/rinar-automation-test/static/js/main.2f8141e9.js.map",
+    "453.6a0aa1db.chunk.js.map": "/rinar-automation-test/static/js/453.6a0aa1db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c768bd23.css",
+    "static/js/main.2f8141e9.js"
+  ]
+}
