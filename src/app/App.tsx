@@ -6,7 +6,7 @@ import {Route, Routes} from 'react-router-dom';
 import s from './App.module.scss'
 
 import {MainPage} from '../pages';
-import {PageError} from "../pages/404page/PageError";
+import {PageError} from "../pages";
 
 import {PATH} from "../utils/routes/routes";
 import {useAppDispatch} from "../utils/hooks/hooks";
